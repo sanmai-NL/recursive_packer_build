@@ -1,6 +1,6 @@
 :icons: font
 
-link:recursive_packer_build.sh[`recursive_packer_build.sh`] is a tiny shell script function library that helps building Packer-virtualized software, also for projects with Git-based dependency management based on link:Project_dependencies_as_Git_submodules[submodules].
+link:recursive_packer_build.sh[`recursive_packer_build.sh`] is a tiny shell script function library that helps building Packer-virtualized software, also for projects with Git-based dependency management based on link:Project_dependencies_as_Git_submodules.adoc[submodules].
 
 == Requirements
 
