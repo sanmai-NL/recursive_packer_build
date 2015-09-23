@@ -1,0 +1,44 @@
+:icons: font
+
+== Introduction
+
+Some software project has directed you here in order to learn how to manage its dependencies kept as git submodules.
+
+Git submodules are subrepositories within a Git repository. They are linked in to the parent repository based on a Git URL and/or branch name.
+
+== Getting started with a Git repository that has submodules
+
+Whenever you clone a certain Git repository like so:
+
+[source,Sh]
+----
+git clone --recursive # <1>
+----
+<1> a string with a URL to that certain Git repository
+
+then all of its submodules, and their submodules, _et cetera_, will be cloned in one go.
+
+For a Git repository that was cloned without the `--recursive` command line argument, you can issue (from its root directory):
+
+[source,Sh]
+----
+git submodule update --init --recursive
+----
+
+All the submodules (subrepositories) specified in its `.gitmodules` file will be cloned as well.
+
+== Managing updates to upstream Git repositories that are submodules within a certain repository
+
+Git submodules are tied to a certain revision on their branch. Whenever the upstream Git repository for a submodule changes, these changes will only be fetched and merged when explicitly instructed. To pull the latest revisions of the submodules, please follow the following procedure.
+
+* `cd` to that certain repository's root directory.
+* Pull in the latest revisions (on the `master` branch) of the submodules, by issuing:
++
+[source,Sh]
+----
+git submodule update --recursive --remote
+----
+
+== In case a submodule of a certain repository and/or the repository itself has a 'packer.json' file in their root directory
+
+Sometimes a Git repository, somewhere down the directory tree, contains some https://packer.io[Packer]-based virtualized software. To perform a build of that software after building every Docker container image it depends on, you can use link:recursive_packer_build.sh[`recursive_packer_build.sh`], as explained in this repository's link:README.adoc[README].

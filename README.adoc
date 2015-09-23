@@ -1,0 +1,29 @@
+:icons: font
+
+link:recursive_packer_build.sh[`recursive_packer_build.sh`] is a tiny shell script function library that helps building Packer-virtualized software, also for projects with Git-based dependency management based on link:Project_dependencies_as_Git_submodules[submodules].
+
+== Requirements
+
+* A POSIX-compatible shell and GNU/Linux. I'm open to patches and testing to ensure support of other operating systems.
+* https://git-scm.com/[Git]
+* https://packer.io[Packer].
+* The `tac` command-line utility, offered by http://www.gnu.org/software/coreutils/coreutils.html[GNU coreutils]. This is normally already part of your OS distribution.
+
+== To use
+
+* ‘Source’ the library into your current shell session:
++
+[source,Sh]
+----
+. 'recursive_packer_build.sh' # <1>
+----
+<1> Replace the path to 'recursive_packer_build.sh' to the absolute filesystem path if this doesn't work for you.
++
+* Within the current shell session you can now issue the command:
++
+[source,Sh]
+----
+build_all
+----
+
+You may put the source command in your shell profile to have it automatically available in each future shell session.
