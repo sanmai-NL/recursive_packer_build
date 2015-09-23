@@ -39,6 +39,6 @@ Git submodules are tied to a certain revision on their branch. Whenever the upst
 git submodule update --recursive --remote
 ----
 
-== In case a submodule of a certain repository and/or the repository itself has a 'packer.json' file in their root directory
+== In case (a submodule of) a certain repository has a 'packer.json' file in its root directory
 
 Sometimes a Git repository, somewhere down the directory tree, contains some https://packer.io[Packer]-based virtualized software. To perform a build of that software after building every Docker container image it depends on, you can use link:recursive_packer_build.sh[`recursive_packer_build.sh`], as explained in this repository's link:README.adoc[README].
