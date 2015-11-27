@@ -15,11 +15,11 @@ link:recursive_packer_build.sh[`recursive_packer_build.sh`] is a tiny shell scri
 +
 [source,Sh]
 ----
-. 'recursive_packer_build.sh' # <1>
+. 'recursive_packer_build.sh'
 ----
-<1> Replace the path to 'recursive_packer_build.sh' to the absolute filesystem path if this doesn't work for you.
+Replace the path to `'recursive_packer_build.sh'` with the absolute filesystem path if this doesn't work for you.
 +
-* Within the current shell session you can now issue the command:
+* Within the current shell session, issue the command:
 +
 [source,Sh]
 ----
